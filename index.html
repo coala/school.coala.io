@@ -1,60 +1,95 @@
 <!DOCTYPE html>
-
 <html ng-app="coala">
-<head>
-
+  <head>
     <title>coala</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
-    <script src="js/app.js"></script>   
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
-    <link rel="stylesheet" href="resources/css/style.css">
-    <link rel="stylesheet" href="https://rawgit.com/coala/coalaCSS/master/coala.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,700,900|Roboto:100,200,300,400,500,600,700,800,900|Ubuntu+Mono" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-
-</head>
-<body>
-<main>
-<div ng-controller="TabController as tc">
-    <div class="tab-container">
-        <div class="row">
-        <nav>
-            <div class="col s12 nav-wrapper">
-              <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+    <script src="js/app.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="resources/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://rawgit.com/coala/coalaCSS/master/coala.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,700,900|Roboto:100,200,300,400,500,600,700,800,900|Ubuntu+Mono"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <main>
+      <div ng-controller="TabController as tc">
+        <div class="tab-container">
+          <div class="row">
+            <nav>
+              <div class="col s12 nav-wrapper">
+                <a href="#" data-activates="mobile-demo" class="button-collapse"
+                  ><i class="material-icons">menu</i></a
+                >
 
                 <ul class="tabs hide-on-med-and-down">
-                   <li class="tab col s12"><a ng-click="tc.setTab('/one')" ng-class="{active:tc.isSet('/one')}">HOME</a></li>
-                  <li class="tab col s12"><a ng-click="tc.setTab('/two')" ng-class="{active:tc.isSet('/two')}">ABOUT</a></li>
+                  <li class="tab col s12">
+                    <a
+                      ng-click="tc.setTab('/one')"
+                      ng-class="{active:tc.isSet('/one')}"
+                      >HOME</a
+                    >
+                  </li>
+                  <li class="tab col s12">
+                    <a
+                      ng-click="tc.setTab('/two')"
+                      ng-class="{active:tc.isSet('/two')}"
+                      >ABOUT</a
+                    >
+                  </li>
                 </ul>
                 <ul class="side-nav" id="mobile-demo">
-                  <li class="tab col s12"><a ng-click="tc.setTab('/one')" ng-class="{active:tc.isSet('/one')}">HOME</a></li>
-                  <li class="tab col s12"><a ng-click="tc.setTab('/two')" ng-class="{active:tc.isSet('/two')}">ABOUT</a></li>
+                  <li class="tab col s12">
+                    <a
+                      ng-click="tc.setTab('/one')"
+                      ng-class="{active:tc.isSet('/one')}"
+                      >HOME</a
+                    >
+                  </li>
+                  <li class="tab col s12">
+                    <a
+                      ng-click="tc.setTab('/two')"
+                      ng-class="{active:tc.isSet('/two')}"
+                      >ABOUT</a
+                    >
+                  </li>
                 </ul>
-
-            </div>
+              </div>
             </nav>
+          </div>
         </div>
-    </div>
 
-<div ng-view=""></div>
+        <div ng-view=""></div>
+      </div>
+    </main>
+    <ng-include src="'includes/footer.html'" scope="" onload=""></ng-include>
+  </body>
 
-</div>
-</main>
-<ng-include src="'includes/footer.html'" scope="" onload=""></ng-include>
-
-</body>
+  <script>
+    $(document).ready(function () {
+      $("select").material_select();
+      $(".button-collapse").sideNav();
+    });
+  </script>
 </html>
-
-<script>
-$(document).ready(function () {
-    $('select').material_select();
-    $(".button-collapse").sideNav();
-})
-</script>
